@@ -1,302 +1,292 @@
-/* ======== GERAL ======== */
+/* ====== ESTILO GERAL ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #222;
-  background-color: #f9f9f9;
-  line-height: 1.6;
+  background: linear-gradient(135deg, #dff5f2 0%, #b3e0dc 40%, #d4f0ed 100%);
+  color: #033b3d;
+  line-height: 1.7;
 }
 
-/* ======== NAVEGAÇÃO ======== */
+/* ====== MENU ====== */
 .navbar {
-  background: #00866f;
-  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(3, 59, 61, 0.9);
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  color: #fff;
-  position: sticky;
-  top: 0;
+  padding: 1rem 2rem;
   z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .navbar .logo {
-  font-size: 1.5em;
   font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  list-style: none;
+  gap: 1.5rem;
 }
 
-.navbar ul li {
-  margin: 0 10px;
-}
-
-.navbar ul li a {
-  color: #fff;
+.navbar a {
+  color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-  text-decoration: underline;
+.navbar a:hover {
+  color: #85e1d9;
 }
 
+/* Responsivo */
 .menu-toggle {
   display: none;
-  font-size: 1.8em;
+  font-size: 1.8rem;
   background: none;
   border: none;
-  color: #fff;
+  color: white;
 }
 
 @media (max-width: 768px) {
-  #menuList {
+  .navbar ul {
     display: none;
     flex-direction: column;
-    width: 100%;
-    background: #00a884;
-    text-align: center;
+    background: rgba(3,59,61,0.95);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 10px 10px;
   }
-  #menuList.active {
+
+  .navbar ul.active {
     display: flex;
   }
+
   .menu-toggle {
     display: block;
   }
 }
 
-/* ======== CABEÇALHO ======== */
+/* ====== CABEÇALHO ====== */
 .hero {
-  background: url('images/sistema-com-id.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 120px 20px;
+  height: 90vh;
+  background: url('images/atual.jpg') center/cover no-repeat;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
 }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.4);
+.hero::after {
+  content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
+  background: rgba(0, 40, 40, 0.6);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1em;
-  max-width: 700px;
-  margin: 0 auto;
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
-/* ======== SEÇÕES ======== */
+/* ====== SEÇÕES ====== */
 .content-section {
-  padding: 70px 10%;
-  background-color: #fff;
+  max-width: 1100px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: #ffffffb8;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.content-section:hover {
+  transform: translateY(-5px);
 }
 
 .content-section.alt {
-  background-color: #e9f8f5;
+  background: #e8f8f6;
 }
 
 .content-section h2 {
-  font-size: 2em;
-  color: #00866f;
-  margin-bottom: 20px;
+  color: #046d64;
+  margin-bottom: 1rem;
+  font-size: 2rem;
   text-align: center;
 }
 
-.content-section p {
-  margin-bottom: 15px;
+.content-section p, .content-section li {
+  font-size: 1rem;
   text-align: justify;
 }
 
-.content-section ul {
-  list-style: disc inside;
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-
+/* ====== IMAGENS ====== */
 .main-img {
   display: block;
-  max-width: 600px;
-  width: 90%;
-  margin: 20px auto;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  max-width: 100%;
+  border-radius: 16px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-/* ======== GRID DE ÓRGÃOS ======== */
+/* ====== GRID DE ÓRGÃOS ====== */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  width: 300px;
+  background: white;
+  border-radius: 18px;
+  padding: 1rem;
   text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
 .card img {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-/* ======== DOENÇAS, CURIOSIDADES E CUIDADOS ======== */
+/* ====== VÍDEO ====== */
+.video-box {
+  display: block;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* ====== DOENÇAS E CURIOSIDADES ====== */
 .box-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 .box-item {
+  flex: 1;
+  min-width: 300px;
   background: #ffffff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
-  width: 350px;
-  transition: 0.3s;
-}
-
-.box-item:hover {
-  background-color: #f2fefc;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .box-item h3 {
-  color: #00866f;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #00a884;
-  padding-bottom: 5px;
+  color: #00796b;
+  margin-bottom: 1rem;
 }
 
-.box-item ul {
-  margin-top: 10px;
-}
-
-/* ======== VÍDEO ======== */
-.video-box {
-  display: block;
-  width: 90%;
-  max-width: 700px;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-}
-
-/* ======== QUIZ ======== */
+/* ====== QUIZ ====== */
 #quiz-container {
   text-align: center;
+  margin-top: 2rem;
 }
 
 .option-btn {
   display: block;
   width: 60%;
-  margin: 8px auto;
-  background: #00a884;
-  color: #fff;
-  border: none;
+  margin: 10px auto;
   padding: 10px;
-  border-radius: 8px;
+  border: none;
+  background: #00796b;
+  color: white;
+  border-radius: 10px;
+  transition: background 0.3s;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .option-btn:hover {
-  background: #00866f;
+  background: #009e8e;
 }
 
-/* ======== BOTÃO VOLTAR AO TOPO ======== */
-#btnTop {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #00866f;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  font-size: 1.2em;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  transition: 0.3s;
-}
-
-#btnTop:hover {
-  background: #00a884;
-}
-
-/* ======== RODAPÉ ======== */
+/* ====== RODAPÉ ====== */
 footer {
-  background: #00866f;
-  color: #fff;
+  background: #033b3d;
+  color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 2rem;
 }
 
 footer a {
-  color: #fff;
-  text-decoration: underline;
+  color: #85e1d9;
+  text-decoration: none;
 }
 
 footer a:hover {
-  color: #bdf3e9;
+  text-decoration: underline;
 }
 
-footer .copy {
-  margin-top: 20px;
-  font-size: 0.9em;
+.copy {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
-/* ======== ANIMAÇÕES ======== */
+/* ====== ANIMAÇÕES ====== */
 .fade-in {
-  animation: fadeIn 1.5s ease-in;
-}
-
-.fade-up {
-  animation: fadeUp 1.2s ease-out;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s forwards;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
