@@ -1,10 +1,50 @@
-// === MENU MOBILE ===
-const menuToggle = document.getElementById('menuToggle');
-const menuList = document.getElementById('menuList');
+// === MENU MOBILE (versão corrigida) ===
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+  const menuLinks = document.querySelectorAll('#menuList a');
 
-menuToggle.addEventListener('click', () => {
-  menuList.classList.toggle('active');
-  menuToggle.textContent = menuList.classList.contains('active') ? '✖' : '☰';
+  console.log('[menu] iniciando controle do menu');
+
+  if (!menuToggle) return console.error('[menu] botão #menuToggle não encontrado');
+  if (!menuList) return console.error('[menu] lista #menuList não encontrada');
+
+  // abre / fecha com o botão
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuList.classList.toggle('active');
+    console.log('[menu] toggle, ativo:', menuList.classList.contains('active'));
+  });
+
+  // fecha quando clica em um link do menu
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // só fecha se for tela pequena (mobile)
+      if (window.innerWidth <= 768) {
+        if (menuList.classList.contains('active')) {
+          menuList.classList.remove('active');
+          console.log('[menu] link clicado -> menu fechado');
+        }
+      }
+    });
+  });
+
+  // fecha se clicar fora do menu (mobile)
+  document.addEventListener('click', (e) => {
+    const isClickInside = menuList.contains(e.target) || menuToggle.contains(e.target);
+    if (!isClickInside && menuList.classList.contains('active')) {
+      menuList.classList.remove('active');
+      console.log('[menu] clique fora -> menu fechado');
+    }
+  });
+
+  // fecha o menu se redimensionar pra tela grande
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && menuList.classList.contains('active')) {
+      menuList.classList.remove('active');
+      console.log('[menu] resize >768px -> menu fechado');
+    }
+  });
 });
 
 // === BOTÃO VOLTAR AO TOPO ===
