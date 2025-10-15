@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biossistemas Grupo 2 - Sistema Respiratório</title>
+  <title>Biossistemas Grupo 2 — Sistema Respiratório</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
@@ -12,21 +12,16 @@
   <nav class="navbar">
     <div class="menu-container">
       <h2 class="logo">Biossistemas</h2>
-      <button class="menu-toggle" id="menuToggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
     <ul id="menuList">
       <li><a href="#inicio">Início</a></li>
       <li><a href="#funcao">Função e Importância</a></li>
       <li><a href="#orgaos">Estruturas e Órgãos</a></li>
-      <li><a href="#doencas">Doenças e Cuidados</a></li>
-      <li><a href="#curiosidades">Curiosidades</a></li>
+      <li><a href="#doencas">Doenças e Curiosidades</a></li>
       <li><a href="#interacoes">Interações</a></li>
-      <li><a href="#video">Vídeo</a></li>
       <li><a href="#grafico">Gráfico</a></li>
+      <li><a href="#video">Vídeo</a></li>
       <li><a href="#quiz">Quiz</a></li>
       <li><a href="#referencias">Referências</a></li>
     </ul>
@@ -34,61 +29,180 @@
 
   <!-- CABEÇALHO -->
   <header class="hero fade-in" id="inicio">
-    <img src="images/sistema-respiratorio-banner.jpg" alt="Sistema Respiratório" class="hero-img" />
+    <div class="overlay"></div>
     <div class="hero-content">
       <h1>Sistema Respiratório Humano</h1>
-      <p><strong>Grupo 2 – Biossistemas do Corpo Humano</strong></p>
-      <p class="integrantes">
-        Isabela Maria Lopes da Conceição | Maria Carolina Lima | Lenira Sousa de Medeiros | Larissa Cristina Vieitas Munhoz |
-        Bianca Parma Dorigueto Oliveira | Ivoneide Pinheiro da Silva | Tayná Pereira Peixoto | Kayque Alex Oliveira Rios | Juliana Abraão de Souza
+      <p>
+        Grupo: Isabela Maria Lopes da Conceição, Maria Carolina Lima, Lenira Sousa de Medeiros, 
+        Larissa Cristina Vieitas Munhoz, Ivoneide Pinheiro da Silva, 
+        Tayná Pereira Peixoto, Kayque Alex Oliveira Rios e Juliana Abraão de Souza
       </p>
     </div>
   </header>
 
   <main>
-    <!-- Seção de exemplo para teste -->
+    <!-- Seção Função -->
     <section class="content-section fade-up" id="funcao">
       <h2>Função e Importância do Sistema Respiratório</h2>
-      <p>O sistema respiratório é responsável pelas trocas gasosas entre o corpo e o meio ambiente, permitindo a entrada de oxigênio e a saída de dióxido de carbono.</p>
-      <img src="images/organizacao-funcional-dos-pulmoes.png" alt="Organização funcional dos pulmões" class="main-img" />
+      <p>O sistema respiratório é responsável pela captação de oxigênio e pela eliminação do dióxido de carbono, processos essenciais para o metabolismo celular.</p>
+      <ul>
+        <li>Permite as trocas gasosas entre o corpo e o ambiente;</li>
+        <li>Regula o pH sanguíneo pelo controle do CO₂;</li>
+        <li>Auxilia na fonação e na olfação;</li>
+        <li>Filtra, aquece e umidifica o ar inspirado.</li>
+      </ul>
+      <img src="images/organizacao-funcional-dos-pulmoes.png" alt="Organização funcional dos pulmões" class="main-img">
+      <p class="img-caption">Figura 1 — Organização funcional dos pulmões, mostrando a distribuição dos brônquios e alvéolos.</p>
+    </section>
+
+    <!-- Seção Órgãos -->
+    <section class="content-section alt fade-up" id="orgaos">
+      <h2>Estruturas e Órgãos Envolvidos</h2>
+      <p>O sistema respiratório é dividido em duas partes principais:</p>
+      <ul>
+        <li><strong>Porção condutora:</strong> nariz, faringe, laringe, traqueia e brônquios;</li>
+        <li><strong>Porção respiratória:</strong> bronquíolos terminais, ductos alveolares e alvéolos pulmonares.</li>
+      </ul>
+
+      <div class="grid">
+        <div class="card fade-in">
+          <img src="images/pulmoes.png" alt="Pulmões">
+          <h3>Pulmões</h3>
+          <p>Órgãos esponjosos onde ocorre a troca de gases entre o ar e o sangue.</p>
+        </div>
+        <div class="card fade-in">
+          <img src="images/alveolos.png" alt="Alvéolos pulmonares">
+          <h3>Alvéolos</h3>
+          <p>Estruturas microscópicas responsáveis pela troca gasosa entre oxigênio e dióxido de carbono.</p>
+        </div>
+        <div class="card fade-in">
+          <img src="images/vias-respiratorias.png" alt="Vias respiratórias">
+          <h3>Vias Respiratórias</h3>
+          <p>Canalizam o ar até os pulmões, aquecendo, filtrando e umidificando o ar inspirado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Doenças e Curiosidades -->
+    <section class="content-section fade-up" id="doencas">
+      <h2>Doenças, Cuidados e Curiosidades</h2>
+      <div class="box-section">
+        <div class="box-item">
+          <h3>Doenças Comuns</h3>
+          <ul>
+            <li>Asma — inflamação crônica das vias respiratórias;</li>
+            <li>Bronquite — inflamação dos brônquios;</li>
+            <li>Pneumonia — infecção dos alvéolos;</li>
+            <li>DPOC — obstrução crônica causada pelo tabagismo;</li>
+            <li>Sinusite — inflamação dos seios nasais;</li>
+            <li>Gripe e resfriado — infecções virais das vias aéreas;</li>
+            <li>Câncer de pulmão — associado ao tabagismo;</li>
+            <li>Enfisema pulmonar — destruição dos alvéolos;</li>
+            <li>Tuberculose — infecção bacteriana grave;</li>
+            <li>Covid-19 — infecção viral que afeta diretamente os pulmões.</li>
+          </ul>
+        </div>
+
+        <div class="box-item">
+          <h3>Cuidados Essenciais</h3>
+          <ul>
+            <li>Evite fumar e a exposição à poluição;</li>
+            <li>Pratique exercícios físicos regulares;</li>
+            <li>Mantenha ambientes ventilados;</li>
+            <li>Hidrate-se e mantenha boa alimentação;</li>
+            <li>Realize consultas médicas preventivas;</li>
+            <li>Evite contato com substâncias tóxicas;</li>
+            <li>Vacine-se contra doenças respiratórias;</li>
+            <li>Utilize máscara em locais poluídos;</li>
+            <li>Durma bem e fortaleça o sistema imunológico;</li>
+            <li>Evite mudanças bruscas de temperatura.</li>
+          </ul>
+        </div>
+
+        <div class="box-item">
+          <h3>Curiosidades</h3>
+          <ul>
+            <li>O pulmão esquerdo é menor para acomodar o coração;</li>
+            <li>Respiramos cerca de 20 mil vezes por dia;</li>
+            <li>Os pulmões contêm mais de 300 milhões de alvéolos;</li>
+            <li>O ar percorre até 600 milhões de capilares pulmonares;</li>
+            <li>Durante o sono, a respiração se torna mais lenta;</li>
+            <li>O sistema respiratório é essencial para o equilíbrio do pH sanguíneo;</li>
+            <li>Os espirros podem ultrapassar 150 km/h;</li>
+            <li>O som da voz é produzido pela vibração das pregas vocais;</li>
+            <li>Os pulmões humanos podem flutuar na água;</li>
+            <li>Se todos os alvéolos fossem esticados, cobririam uma quadra de tênis.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interações -->
+    <section class="content-section alt fade-up" id="interacoes">
+      <h2>Interações com Outros Sistemas</h2>
+      <ul>
+        <li><strong>Circulatório:</strong> transporta o oxigênio absorvido e remove o gás carbônico.</li>
+        <li><strong>Nervoso:</strong> controla a frequência respiratória e responde aos níveis de CO₂ no sangue.</li>
+        <li><strong>Muscular:</strong> o diafragma e músculos intercostais realizam os movimentos respiratórios.</li>
+        <li><strong>Digestório:</strong> fornece energia para os músculos respiratórios e influencia o volume abdominal.</li>
+        <li><strong>Excretor:</strong> coopera na regulação do pH do sangue, juntamente com a eliminação de CO₂.</li>
+        <li><strong>Endócrino:</strong> influencia o ritmo respiratório com hormônios como adrenalina e cortisol.</li>
+      </ul>
+      <img src="images/interacoes.jpg" alt="Interações com outros sistemas" class="main-img">
+      <p class="img-caption">Figura 2 — Representação das interações do sistema respiratório com outros sistemas do corpo humano.</p>
+    </section>
+
+    <!-- Gráfico -->
+    <section class="content-section fade-up" id="grafico">
+      <h2>Composição do Ar Inspirado e Expirado</h2>
+      <canvas id="respChart" width="600" height="400" style="max-width:100%;"></canvas>
+
+      <h3>Volumes e Capacidades Pulmonares</h3>
+      <img src="images/grafico-da-capacidade-respiratoria.png" alt="Gráfico de volumes e capacidades pulmonares" class="main-img">
+      <p class="img-caption">
+        Gráfico de volumes e capacidades pulmonares, mostrando as variações do ar nos pulmões durante a respiração.
+        A soma desses volumes forma as capacidades pulmonares, como a <strong>Capacidade Vital (CV)</strong> — soma de VC + VRI + VRE — 
+        e a <strong>Capacidade Pulmonar Total (CPT)</strong>, que inclui o volume residual. 
+        Esses valores representam a expansão e contração dos pulmões durante o ciclo respiratório.
+      </p>
+    </section>
+
+    <!-- Vídeo -->
+    <section class="content-section fade-up" id="video">
+      <h2>Vídeo Explicativo</h2>
+      <video controls class="video-box">
+        <source src="videos/meu-video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+    </section>
+
+    <!-- Quiz -->
+    <section class="content-section fade-up" id="quiz">
+      <h2>Quiz Respiratório 🫁</h2>
+      <p>Teste seus conhecimentos sobre o sistema respiratório!</p>
+      <div id="quiz-container">
+        <div id="question"></div>
+        <div id="options"></div>
+        <button id="next-btn">Próxima</button>
+        <div id="score"></div>
+      </div>
     </section>
   </main>
 
-  <!-- BOTÃO VOLTAR AO TOPO -->
-  <button id="btnTop">⬆</button>
-
-  <!-- RODAPÉ -->
+  <!-- Rodapé -->
   <footer id="referencias" class="fade-in">
     <h3>Referências Bibliográficas</h3>
-    <p>BRASIL. Ministério da Saúde. <strong>Sistema respiratório humano.</strong> Disponível em: <a href="https://www.gov.br/saude" target="_blank">https://www.gov.br/saude</a>. Acesso em: 13 out. 2025.</p>
-    <p>FIOCRUZ. <strong>Como funciona o sistema respiratório.</strong> Fundação Oswaldo Cruz, 2024. Disponível em: <a href="https://www.fiocruz.br" target="_blank">https://www.fiocruz.br</a>.</p>
-    <p>UNIVERSIDADE DE SÃO PAULO (USP). <strong>Anatomia humana: sistema respiratório.</strong> Faculdade de Medicina, 2023. Disponível em: <a href="https://www.fm.usp.br" target="_blank">https://www.fm.usp.br</a>.</p>
-    <p>SOCIEDADE BRASILEIRA DE PNEUMOLOGIA E TISIOLOGIA (SBPT). <strong>Doenças respiratórias comuns.</strong> 2024. Disponível em: <a href="https://sbpt.org.br" target="_blank">https://sbpt.org.br</a>.</p>
+    <p>BRASIL. Ministério da Saúde. <strong>Sistema respiratório humano.</strong> Disponível em: https://www.gov.br/saude. Acesso em: 13 out. 2025.</p>
+    <p>FIOCRUZ. <strong>Como funciona o sistema respiratório.</strong> Fundação Oswaldo Cruz, 2023.</p>
+    <p>BRASIL ESCOLA. <strong>Sistema respiratório.</strong> Disponível em: https://brasilescola.uol.com.br/biologia/sistema-respiratorio.htm.</p>
+    <p>USP – Faculdade de Medicina. <strong>Anatomia humana: sistema respiratório.</strong> Universidade de São Paulo, 2022.</p>
+    <p>SBPT – Sociedade Brasileira de Pneumologia e Tisiologia. <strong>Doenças respiratórias comuns.</strong> 2024.</p>
+    <p>NOTEBOOKLM. <strong>Vídeo explicativo do sistema respiratório.</strong> Acesso em: 13 out. 2025.</p>
     <p class="copy">© 2025 | Grupo de <strong>Biossistemas do Corpo Humano</strong></p>
   </footer>
 
-  <!-- SCRIPT -->
-  <script>
-    // Botão voltar ao topo
-    const btn = document.getElementById('btnTop');
-    window.onscroll = () => btn.style.display = document.documentElement.scrollTop > 300 ? 'block' : 'none';
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  <button id="btnTop">⬆</button>
 
-    // Menu responsivo com animação
-    const menuToggle = document.getElementById('menuToggle');
-    const menuList = document.getElementById('menuList');
-    menuToggle.addEventListener('click', () => {
-      menuList.classList.toggle('active');
-      menuToggle.classList.toggle('open');
-    });
-
-    // Fecha o menu ao clicar em um link
-    document.querySelectorAll('#menuList a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuList.classList.remove('active');
-        menuToggle.classList.remove('open');
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
