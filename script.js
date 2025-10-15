@@ -234,3 +234,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+/* ======== MENU MOBILE ======== */
+const menuToggle = document.querySelector(".menu-toggle");
+const menuList = document.getElementById("menuList");
+
+if (menuToggle && menuList) {
+  menuToggle.addEventListener("click", () => {
+    menuList.classList.toggle("active");
+  });
+
+  // Fecha o menu ao clicar em um link
+  document.querySelectorAll("#menuList a").forEach(link => {
+    link.addEventListener("click", () => {
+      menuList.classList.remove("active");
+    });
+  });
+}
+
+/* ======== BOTÃO VOLTAR AO TOPO ======== */
+const btnTop = document.getElementById("btnTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    btnTop.style.display = "flex";
+  } else {
+    btnTop.style.display = "none";
+  }
+});
+
+if (btnTop) {
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+/* ======== ANIMAÇÃO SUAVE AO ROLAR ======== */
+const fadeElements = document.querySelectorAll(".fade-in, .fade-up");
+
+function checkFade() {
+  const triggerBottom = window.innerHeight * 0.85;
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < triggerBottom) {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    }
+  });
+}
+
+window.addEventListener("scroll", checkFade);
+window.addEventListener("load", checkFade);
+
+/* ======== DESTAQUE DO MENU ATUAL ======== */
+const navLinks = document.querySelectorAll("nav a");
+window.addEventListener("scroll", () => {
+  let fromTop = window.scrollY + 120;
+
+  navLinks.forEach(link => {
+    const section = document.querySelector(link.hash);
+    if (
+      section &&
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
