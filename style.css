@@ -435,3 +435,9 @@ nav a.active {
   border-bottom: 2px solid #00a884;
   transition: 0.3s;
 }
+.image-caption {
+  color: #013;
+  background: rgba(255,255,255,0.7);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
