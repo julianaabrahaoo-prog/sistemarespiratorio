@@ -441,3 +441,26 @@ nav a.active {
   padding: 4px 8px;
   border-radius: 6px;
 }
+/* ===== Feedback visual do quiz ===== */
+.quiz-feedback {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.quiz-feedback.correto {
+  color: #007d63;
+  background-color: #e8f9f0;
+  border-left: 4px solid #00a884;
+}
+
+.quiz-feedback.incorreto {
+  color: #b00020;
+  background-color: #fdeaea;
+  border-left: 4px solid #ff5c5c;
+}
