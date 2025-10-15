@@ -1,4 +1,4 @@
-/* ======== CONFIGURAÇÃO GERAL ======== */
+/* ======== CONFIGURAÇÕES GERAIS ======== */
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(120deg, #e8f9f1, #ffffff, #e8f9f1);
+  background: linear-gradient(135deg, #e9fff4, #ffffff, #e9fff4);
   background-size: 400% 400%;
   animation: fundoAnimado 12s ease infinite;
   color: #222;
@@ -35,6 +35,7 @@ body {
   align-items: center;
   padding: 12px 20px;
   z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -119,16 +120,18 @@ body {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* ======== SEÇÕES ======== */
 .content-section {
-  padding: 80px 10%;
+  padding: 90px 10%;
   background-color: #fff;
 }
 
@@ -139,7 +142,9 @@ body {
 .content-section h2 {
   color: #00775d;
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  border-left: 6px solid #00a884;
+  padding-left: 10px;
 }
 
 .content-section p, .content-section ul {
@@ -151,7 +156,7 @@ body {
   list-style: disc;
 }
 
-/* ======== GALERIAS DE IMAGENS ======== */
+/* ======== GALERIAS ======== */
 .image-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -174,7 +179,7 @@ body {
 /* ======== GRID ======== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 25px;
   margin-top: 30px;
 }
@@ -326,5 +331,28 @@ footer a:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .content-section {
+    padding: 60px 6%;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .image-gallery img {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-box {
+    width: 100%;
   }
 }
