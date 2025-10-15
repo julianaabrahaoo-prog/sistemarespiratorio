@@ -367,3 +367,11 @@ footer p {
 @keyframes fadeUp {
   to { opacity: 1; transform: none; }
 }
+/* --- Correção para mostrar a imagem completa dos músculos da respiração --- */
+#orgaos img[alt="Músculos respiratórios"] {
+  object-fit: contain;   /* mostra a imagem inteira */
+  width: 100%;           /* ocupa toda a largura do card */
+  height: auto;          /* mantém proporção original */
+  background-color: #fff; /* fundo neutro para bordas transparentes, se houver */
+  border-radius: 12px;   /* mantém o estilo arredondado do site */
+}
