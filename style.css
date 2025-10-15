@@ -806,3 +806,59 @@ nav.navbar a.active {
     padding-top: 90px;
   }
 }
+/* ======== CORREÇÃO HERO MOBILE ======== */
+@media (max-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px; /* espaço pro menu fixo */
+    height: auto; /* remove altura fixa */
+    min-height: 100vh;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero h1, .hero h2, .hero p {
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  /* Ajuste da imagem de fundo ou interna */
+  .hero img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  /* Ajuste do menu fixo no topo */
+  header, .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  body {
+    padding-top: 90px; /* espaço extra pro header */
+  }
+}
