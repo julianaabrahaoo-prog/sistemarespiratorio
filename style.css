@@ -429,3 +429,9 @@ img {
   margin-right: 6px;
   vertical-align: middle;
 }
+nav a.active {
+  color: #00a884;
+  font-weight: bold;
+  border-bottom: 2px solid #00a884;
+  transition: 0.3s;
+}
