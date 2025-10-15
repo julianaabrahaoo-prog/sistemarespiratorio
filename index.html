@@ -343,12 +343,24 @@
         const b=document.createElement('button');
         b.className='option-btn';
         b.textContent=opt;
-        b.onclick=()=>{
-          const ok=opt===it.a;
-          optEl.innerHTML=`<p><strong>${ok?'Correto!':'Incorreto.'}</strong> ${it.exp}</p>`;
-          if(ok)score++;
-          setTimeout(()=>{i++; if(i<quizData.length)loadQ(); else finish();},1300);
-        };
+        b.onclick = () => {
+  const ok = opt === it.a;
+  optEl.innerHTML = `
+    <div class="quiz-feedback ${ok ? 'correto' : 'incorreto'}">
+      ${ok ? '✅ <strong>Correto!</strong>' : '❌ <strong>Errado!</strong>'}
+      <p>${it.exp}</p>
+    </div>
+  `;
+  if (ok) score++;
+
+  // Espera 2 segundos antes de ir para a próxima pergunta
+  setTimeout(() => {
+    i++;
+    if (i < quizData.length) loadQ();
+    else finish();
+  }, 2000);
+};
+
         optEl.appendChild(b);
       });
     }
