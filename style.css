@@ -561,3 +561,60 @@ nav.navbar a.active {
   color: #444;
   font-size: 1em;
 }
+/* ===== CURIOSIDADES VISUAIS ===== */
+.curiosidades-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.curiosidade {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f7fffb;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.curiosidade:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.curiosidade img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 6px;
+}
+
+.curiosidade h3 {
+  color: #007d63;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.curiosidade p {
+  color: #033;
+  font-size: 0.95rem;
+}
+
+/* As extras continuam escondidas inicialmente */
+.curiosidade.extra {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.curiosidade.extra.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
