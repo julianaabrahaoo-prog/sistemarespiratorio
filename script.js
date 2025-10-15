@@ -1,58 +1,52 @@
-// === MENU MOBILE (versão corrigida) ===
+// === MENU MOBILE ===
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const menuList = document.getElementById('menuList');
   const menuLinks = document.querySelectorAll('#menuList a');
 
-  console.log('[menu] iniciando controle do menu');
+  if (!menuToggle || !menuList) return;
 
-  if (!menuToggle) return console.error('[menu] botão #menuToggle não encontrado');
-  if (!menuList) return console.error('[menu] lista #menuList não encontrada');
-
-  // abre / fecha com o botão
+  // Abre / fecha menu
   menuToggle.addEventListener('click', (e) => {
     e.stopPropagation();
     menuList.classList.toggle('active');
-    console.log('[menu] toggle, ativo:', menuList.classList.contains('active'));
   });
 
-  // fecha quando clica em um link do menu
+  // Fecha quando clica num link (mobile)
   menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      // só fecha se for tela pequena (mobile)
-      if (window.innerWidth <= 768) {
-        if (menuList.classList.contains('active')) {
-          menuList.classList.remove('active');
-          console.log('[menu] link clicado -> menu fechado');
-        }
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768 && menuList.classList.contains('active')) {
+        menuList.classList.remove('active');
       }
     });
   });
 
-  // fecha se clicar fora do menu (mobile)
+  // Fecha se clicar fora (mobile)
   document.addEventListener('click', (e) => {
     const isClickInside = menuList.contains(e.target) || menuToggle.contains(e.target);
     if (!isClickInside && menuList.classList.contains('active')) {
       menuList.classList.remove('active');
-      console.log('[menu] clique fora -> menu fechado');
     }
   });
 
-  // fecha o menu se redimensionar pra tela grande
+  // Fecha se redimensionar para desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768 && menuList.classList.contains('active')) {
       menuList.classList.remove('active');
-      console.log('[menu] resize >768px -> menu fechado');
     }
   });
 });
 
+
 // === BOTÃO VOLTAR AO TOPO ===
 const btnTop = document.getElementById('btnTop');
-window.addEventListener('scroll', () => {
-  btnTop.style.display = (document.documentElement.scrollTop > 300) ? 'flex' : 'none';
-});
-btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+if (btnTop) {
+  window.addEventListener('scroll', () => {
+    btnTop.style.display = (document.documentElement.scrollTop > 300) ? 'flex' : 'none';
+  });
+  btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
 
 // === LOADER DE IMAGENS COM FALLBACK ===
 function tryAltImg(imgEl, baseName) {
@@ -74,11 +68,11 @@ function tryAltImg(imgEl, baseName) {
   };
 }
 
-// aplica fallback a todas as imagens
 document.querySelectorAll('img').forEach(img => {
   const src = img.getAttribute('src');
   if (src) tryAltImg(img, src);
 });
+
 
 // === GRÁFICO ANIMADO ===
 const canvas = document.getElementById('respChart');
@@ -101,7 +95,6 @@ if (canvas && canvas.getContext) {
       const inspH = (inspirado[i] * 2.5) * Math.min(progress, 1);
       const expH = (expirado[i] * 2.5) * Math.min(progress, 1);
 
-      // barras
       ctx.fillStyle = '#00a884';
       ctx.fillRect(x, 320 - inspH, 40, inspH);
       ctx.fillStyle = '#007d63';
@@ -116,6 +109,7 @@ if (canvas && canvas.getContext) {
 
   drawBars();
 }
+
 
 // === QUIZ EDUCACIONAL ===
 const quizData = [
@@ -216,91 +210,27 @@ function finishQuiz() {
   scoreEl.innerHTML = `<p>Você acertou <strong>${score}</strong> de <strong>${quizData.length}</strong> perguntas.</p>`;
 }
 
-loadQuestion();
-// === Mostrar mais curiosidades ===
-const btnCuriosidades = document.getElementById('btnCuriosidades');
-const extras = document.querySelectorAll('.curiosidade.extra');
-let mostrando = false;
+if (questionEl && optionsEl && scoreEl) loadQuestion();
 
-btnCuriosidades.addEventListener('click', () => {
-  mostrando = !mostrando;
-  extras.forEach(c => {
-    if (mostrando) {
-      c.classList.add('show');
-    } else {
-      c.classList.remove('show');
-    }
-  });
-  btnCuriosidades.textContent = mostrando 
-    ? 'Mostrar menos curiosidades ↑'
-    : 'Mostrar mais curiosidades ↓';
-});
-// ======== MOSTRAR MAIS CURIOSIDADES ========
-const btnCuriosidades = document.getElementById('btnCuriosidades');
-const curiosidadesExtras = document.getElementById('curiosidadesExtras');
 
-btnCuriosidades.addEventListener('click', () => {
-  if (curiosidadesExtras.style.display === 'none') {
-    curiosidadesExtras.style.display = 'block';
-    btnCuriosidades.textContent = 'Mostrar menos curiosidades';
-  } else {
-    curiosidadesExtras.style.display = 'none';
-    btnCuriosidades.textContent = 'Mostrar mais curiosidades';
-  }
-});
-<script>
+// === MOSTRAR MAIS CURIOSIDADES ===
 document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menuToggle');
-  const menuList = document.getElementById('menuList');
-  const menuLinks = document.querySelectorAll('#menuList a');
+  const btnCuriosidades = document.getElementById('btnCuriosidades');
+  const curiosidadesExtras = document.getElementById('curiosidadesExtras');
 
-  console.log('[menu] iniciando controle do menu');
+  if (!btnCuriosidades || !curiosidadesExtras) return;
 
-  if (!menuToggle) return console.error('[menu] botão #menuToggle não encontrado');
-  if (!menuList) return console.error('[menu] lista #menuList não encontrada');
+  let mostrando = false;
+  curiosidadesExtras.style.display = 'none';
 
-  // abre / fecha com o botão
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuList.classList.toggle('active');
-    console.log('[menu] toggle, ativo:', menuList.classList.contains('active'));
-  });
-
-  // fecha quando clica em um link do menu
-  menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      // pequena margem: só fechar em telas pequenas (opcional)
-      if (window.innerWidth <= 768) {
-        if (menuList.classList.contains('active')) {
-          menuList.classList.remove('active');
-          console.log('[menu] link clicado -> menu fechado');
-        }
-      } else {
-        // em desktop não forçamos fechar
-        console.log('[menu] link clicado em desktop (não fecha menu)');
-      }
-    });
-  });
-
-  // fecha se clicar fora do menu (útil em mobile)
-  document.addEventListener('click', (e) => {
-    const isClickInside = menuList.contains(e.target) || menuToggle.contains(e.target);
-    if (!isClickInside && menuList.classList.contains('active')) {
-      menuList.classList.remove('active');
-      console.log('[menu] clique fora -> menu fechado');
+  btnCuriosidades.addEventListener('click', () => {
+    mostrando = !mostrando;
+    if (mostrando) {
+      curiosidadesExtras.style.display = 'block';
+      btnCuriosidades.textContent = 'Mostrar menos curiosidades ↑';
+    } else {
+      curiosidadesExtras.style.display = 'none';
+      btnCuriosidades.textContent = 'Mostrar mais curiosidades ↓';
     }
   });
-
-  // fecha o menu ao redimensionar para tela maior (evita menu aberto no desktop)
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && menuList.classList.contains('active')) {
-      menuList.classList.remove('active');
-      console.log('[menu] resize >768px -> menu fechado');
-    }
-  });
-
-  // DEBUG: mostra o número de links
-  console.log('[menu] links encontrados:', menuLinks.length);
 });
-</script>
-
