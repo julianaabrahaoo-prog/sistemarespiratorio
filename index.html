@@ -522,9 +522,122 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+  <!-- SCRIPTS -->
+  <script>
+  // ===== MENU MOBILE =====
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+  const navLinks = document.querySelectorAll('#menuList a');
 
-</body>
-</html>
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuList.classList.toggle('active');
+  });
 
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) menuList.classList.remove('active');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menuList.contains(e.target) && !menuToggle.contains(e.target)) {
+      menuList.classList.remove('active');
+    }
+  });
+
+  // ===== BOTÃO VOLTAR AO TOPO =====
+  const btnTop = document.getElementById('btnTop');
+  window.addEventListener('scroll', () => {
+    btnTop.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
+  });
+  btnTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // ===== GRÁFICO =====
+  const canvas = document.getElementById('respChart');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const gases = ['O₂','CO₂','N₂'];
+    const inspirado = [21, 0.04, 78];
+    const expirado = [16, 4, 78];
+    let progress = 0;
+
+    function drawBars() {
+      progress += 0.03;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.font = '14px Poppins';
+      gases.forEach((g,i)=>{
+        const x = 100 + i*200;
+        const inspH = (inspirado[i]*2.6)*Math.min(progress,1);
+        const expH = (expirado[i]*2.6)*Math.min(progress,1);
+        ctx.fillStyle = '#00a884';
+        ctx.fillRect(x, 320-inspH, 40, inspH);
+        ctx.fillStyle = '#007d63';
+        ctx.fillRect(x+60, 320-expH, 40, expH);
+        ctx.fillStyle = '#000';
+        ctx.fillText(g, x+30, 340);
+      });
+      if (progress<1.05) requestAnimationFrame(drawBars);
+    }
+    drawBars();
+  }
+
+  // ===== QUIZ =====
+  const quizData = [
+    {q:'Qual a principal função do sistema respiratório?', opts:['Trocas gasosas','Digestão','Circulação'], a:'Trocas gasosas', exp:'Troca de O₂ e CO₂ garante energia celular.'},
+    {q:'Onde ocorre a hematose?', opts:['Brônquios','Alvéolos','Diafragma'], a:'Alvéolos', exp:'Os alvéolos possuem paredes finas e contato direto com capilares.'},
+    {q:'Qual músculo é essencial para respirar?', opts:['Bíceps','Diafragma','Trapézio'], a:'Diafragma', exp:'O diafragma contrai e relaxa alterando o volume torácico.'},
+    {q:'O que causa a DPOC?', opts:['Fumo prolongado','Vírus','Bactérias'], a:'Fumo prolongado', exp:'O tabagismo destrói alvéolos e reduz elasticidade pulmonar.'},
+    {q:'Qual órgão impede que o alimento entre na traqueia?', opts:['Epiglote','Faringe','Laringe'], a:'Epiglote', exp:'A epiglote fecha a via aérea durante a deglutição.'}
+  ];
+  let i=0, score=0;
+  const qEl=document.getElementById('question'), optEl=document.getElementById('options'), sEl=document.getElementById('score');
+
+  function loadQ(){
+    const it=quizData[i];
+    qEl.innerHTML=`<h3>${it.q}</h3>`;
+    optEl.innerHTML='';
+    it.opts.forEach(opt=>{
+      const b=document.createElement('button');
+      b.className='option-btn';
+      b.textContent=opt;
+      b.onclick = () => {
+        const ok = opt === it.a;
+        optEl.innerHTML = `
+          <div class="quiz-feedback ${ok ? 'correto' : 'incorreto'}">
+            ${ok ? '✅ <strong>Correto!</strong>' : '❌ <strong>Errado!</strong>'}
+            <p>${it.exp}</p>
+          </div>`;
+        if (ok) score++;
+        setTimeout(() => {
+          i++;
+          if (i < quizData.length) loadQ();
+          else finish();
+        }, 2000);
+      };
+      optEl.appendChild(b);
+    });
+  }
+
+  function finish(){
+    qEl.innerHTML='';
+    optEl.innerHTML='';
+    sEl.innerHTML=`<h3>Você acertou ${score} de ${quizData.length} perguntas!</h3>`;
+  }
+  loadQ();
+
+  // ===== BOTÃO "MOSTRAR MAIS CURIOSIDADES" =====
+  const btn = document.getElementById('btnCuriosidades');
+  const extras = document.getElementById('curiosidadesExtras');
+
+  if (btn && extras) {
+    extras.style.display = 'none';
+    btn.addEventListener('click', () => {
+      const isHidden = getComputedStyle(extras).display === 'none';
+      extras.style.display = isHidden ? 'block' : 'none';
+      btn.textContent = isHidden ? 'Mostrar menos curiosidades' : 'Mostrar mais curiosidades';
+    });
+  }
+  </script>
 </body>
 </html>
