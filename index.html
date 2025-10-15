@@ -1,122 +1,49 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Biossistemas Grupo 2 — Sistema Respiratório</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- NAV -->
-  <nav class="navbar">
-    <div class="menu-container">
-      <h1 class="logo">Biossistemas</h1>
-      <button id="menuToggle" class="menu-toggle">☰</button>
-    </div>
-    <ul id="menuList">
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#funcao">Função</a></li>
-      <li><a href="#orgaos">Órgãos</a></li>
-      <li><a href="#doencas">Doenças & Cuidados</a></li>
-      <li><a href="#curiosidades">Curiosidades</a></li>
-      <li><a href="#interacoes">Interações</a></li>
-      <li><a href="#video">Vídeo</a></li>
-      <li><a href="#grafico">Gráfico</a></li>
-      <li><a href="#quiz">Quiz</a></li>
-      <li><a href="#referencias">Referências</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO / INÍCIO -->
-  <header id="inicio" class="hero fade-in">
-    <img src="images/sistema-respiratorio-banner.jpg" alt="Banner Sistema Respiratório" class="hero-img">
-    <div class="hero-content">
-      <h2>Sistema Respiratório Humano</h2>
-      <p class="subtitle"><strong>Grupo 2 — Biossistemas do Corpo Humano</strong></p>
-      <p class="integrantes">
-        Isabela Maria Lopes da Conceição | Maria Carolina Lima | Lenira Sousa de Medeiros |
-        Larissa Cristina Vieitas Munhoz | Bianca Parma Dorigueto Oliveira |
-        Ivoneide Pinheiro da Silva | Tayná Pereira Peixoto | Kayque Alex Oliveira Rios |
-        Juliana Abraão de Souza
-      </p>
-    </div>
-  </header>
-
-  <button id="btnTop" title="Voltar ao topo">⬆</button>
-
-  <main>
-    <!-- Função -->
-    <section id="funcao" class="content-section fade-up">
-      <h2>O que é o sistema respiratório? Função e importância</h2>
-      <p class="lead">
-        O sistema respiratório é responsável pela ventilação (entrada e saída de ar) e pela hematose — processo pelo qual o oxigênio é transferido aos capilares pulmonares e o dióxido de carbono é eliminado. Esse processo sustenta a respiração celular e a produção de ATP nas células.  
-      </p>
-
-      <div class="summary-grid">
-        <div>
-          <h3>Porção condutora</h3>
-          <p>Inclui nariz, cavidade nasal, faringe, laringe, traqueia e brônquios — tem função de conduzir, filtrar, umidificar e aquecer o ar.</p>
-        </div>
-        <div>
-          <h3>Porção respiratória</h3>
-          <p>Formada por bronquíolos respiratórios e alvéolos, é a região onde a difusão de O₂ e CO₂ entre ar e sangue ocorre com alta eficiência.</p>
-        </div>
-      </div>
-
-      <div class="image-gallery">
-        <img src="images/sistema-com-id.jpg" alt="Esquema identificado do sistema respiratório">
-        <img src="images/organizacao-funcional-dos-pulmoes.jpg" alt="Organização funcional dos pulmões">
-        <img src="images/respiracao-e-inspiracao-jpg.jpg" alt="Movimento respiratório">
-      </div>
-    </section>
-
     <!-- Órgãos -->
     <section id="orgaos" class="content-section alt fade-up">
       <h2>Estruturas e órgãos envolvidos</h2>
-      <p class="lead">Breve descrição das estruturas desde a entrada do ar até os alvéolos.</p>
+      <p class="lead">Descrição das estruturas que compõem o sistema respiratório — desde a entrada do ar até os alvéolos.</p>
 
       <div class="grid">
         <article class="card">
           <img data-src="images/vias-respiratorias-com-id.png" alt="Vias respiratórias" class="smart-img">
+          <figcaption class="figcaption"><em>Figura 4 — Estruturas das vias respiratórias superiores e inferiores.</em></figcaption>
           <h4>Vias respiratórias</h4>
-          <p>Fossas nasais, cavidade e faringe preparam o ar — cílios e muco removem partículas.</p>
+          <p>Fossas nasais, cavidade e faringe preparam o ar — cílios e muco removem partículas e microrganismos.</p>
         </article>
 
         <article class="card">
-          <img data-src="images/traqueia.png" alt="Traqueia" class="smart-img">
+          <img data-src="images/traqueia.png" alt="Traqueia e brônquios" class="smart-img">
+          <figcaption class="figcaption"><em>Figura 5 — Ramificações da traqueia e brônquios nos pulmões.</em></figcaption>
           <h4>Traqueia e brônquios</h4>
-          <p>Condutos rígidos por anéis cartilaginosos que mantêm a via aérea aberta; ramificam-se nos pulmões em brônquios e bronquíolos.</p>
+          <p>Condutos reforçados por anéis cartilaginosos que mantêm a via aérea aberta; ramificam-se nos pulmões em brônquios e bronquíolos.</p>
         </article>
 
         <article class="card">
-          <img data-src="images/estrutura-microscopica-do-alveolo-pulmonar.jpg" alt="Alvéolos" class="smart-img">
+          <img data-src="images/alveolos.jpg" alt="Alvéolos pulmonares" class="smart-img">
+          <figcaption class="figcaption"><em>Figura 6 — Alvéolos pulmonares e sua rede capilar associada.</em></figcaption>
           <h4>Alvéolos</h4>
-          <p>Pequenos sacos revestidos por epitélio muito fino e rede capilar — locais da difusão O₂ ↔ CO₂. A presença de surfactante evita colapso alveolar.</p>
+          <p>Pequenas bolsas com paredes finas e rede capilar — locais da difusão de O₂ e CO₂. O surfactante evita colapso alveolar.</p>
         </article>
 
         <article class="card">
           <img data-src="images/pulmao-anatomico.jpg" alt="Pulmões" class="smart-img">
+          <figcaption class="figcaption"><em>Figura 7 — Estrutura anatômica dos pulmões humano.</em></figcaption>
           <h4>Pulmões</h4>
-          <p>Órgãos divididos em lobos, recobertos pela pleura. O direito possui geralmente três lobos; o esquerdo, dois.</p>
+          <p>Órgãos divididos em lobos, recobertos pela pleura. O direito possui três lobos; o esquerdo, dois, para acomodar o coração.</p>
         </article>
 
         <article class="card">
-          <img data-src="images/musculos-da-respiracao.jpg" alt="Músculos da respiração" class="smart-img">
+          <img data-src="images/musculos-da-respiracao.jpg" alt="Músculos respiratórios" class="smart-img">
+          <figcaption class="figcaption"><em>Figura 8 — Músculos envolvidos na respiração: diafragma e intercostais.</em></figcaption>
           <h4>Músculos</h4>
-          <p>Diafragma e intercostais promovem mudanças de volume torácico; músculos acessórios atuam em esforço respiratório.</p>
+          <p>Diafragma e músculos intercostais alteram o volume torácico, promovendo a entrada e saída de ar.</p>
         </article>
 
         <article class="card">
-          <img data-src="images/cordas-vocais.png" alt="Cordas vocais" class="smart-img">
+          <img data-src="images/cordas-vocais.png" alt="Cordas vocais e laringe" class="smart-img">
+          <figcaption class="figcaption"><em>Figura 9 — Cordas vocais vistas na laringe.</em></figcaption>
           <h4>Laringe e cordas vocais</h4>
-          <p>Protegem a via aérea durante a deglutição e são essenciais para a fonação.</p>
-        </article>
-
-        <article class="card">
-          <img data-src="images/caixa-toracica.jpg" alt="Caixa torácica" class="smart-img">
-          <h4>Caixa torácica</h4>
-          <p>Estrutura óssea e muscular que protege e permite a mecânica respiratória.</p>
+          <p>Protegem a via aérea durante a deglutição e são essenciais para a produção de som e fala.</p>
         </article>
       </div>
     </section>
@@ -124,112 +51,108 @@
     <!-- Doenças e cuidados -->
     <section id="doencas" class="content-section fade-up">
       <h2>Doenças, prevenção e cuidados</h2>
-
       <div class="box-section">
         <div class="box-item">
-          <h4>Doenças </h4>
+          <h4>Doenças mais comuns</h4>
           <ul>
-            <li>Asma</li>
-            <li>Bronquite aguda</li>
-            <li>Bronquite crônica</li>
-            <li>DPOC (enfisema + bronquite crônica)</li>
-            <li>Pneumonia (bacteriana e viral)</li>
+            <li>Asma brônquica</li>
+            <li>Bronquite aguda e crônica</li>
+            <li>DPOC (Doença Pulmonar Obstrutiva Crônica)</li>
+            <li>Pneumonia bacteriana e viral</li>
             <li>Tuberculose</li>
             <li>Câncer de pulmão</li>
             <li>Fibrose pulmonar</li>
-            <li>Síndrome do desconforto respiratório agudo (SDRA)</li>
-            <li>Apneia obstrutiva do sono</li>
-            <li>Rinite alérgica / Sinusite</li>
+            <li>Apneia do sono</li>
+            <li>Sinusite e rinite alérgica</li>
+            <li>COVID-19 e doenças virais respiratórias</li>
           </ul>
         </div>
 
         <div class="box-item">
-          <h4>Cuidados e prevenção </h4>
+          <h4>Cuidados e prevenção</h4>
           <ul>
-            <li>Não fumar; programas de cessação do tabaco.</li>
-            <li>Evitar exposição a poeiras e poluentes ocupacionais.</li>
-            <li>Vacinação anual contra influenza e conforme indicação (pneumococo quando indicado).</li>
-            <li>Higiene das mãos e etiqueta respiratória (cobrir tosse).</li>
-            <li>Ventilação adequada de ambientes fechados.</li>
-            <li>Prática regular de atividade física aeróbica.</li>
-            <li>Controle de alergias (limpeza, filtros, evitar ácaros).</li>
-            <li>Hidratação adequada e alimentação rica em antioxidantes.</li>
-            <li>Rastreamento e exames (espirometria se houver sintomas ou risco).</li>
-            <li>Buscar atendimento rápido para dispneia, febre alta ou expectoração purulenta.</li>
+            <li>Evitar o tabagismo e a exposição passiva à fumaça.</li>
+            <li>Praticar exercícios físicos regulares.</li>
+            <li>Vacinar-se contra gripe e pneumonia.</li>
+            <li>Higienizar mãos e superfícies com frequência.</li>
+            <li>Manter ambientes ventilados e limpos.</li>
+            <li>Usar máscara em locais com poluição ou poeira.</li>
+            <li>Evitar contato com pessoas com infecções respiratórias.</li>
+            <li>Beber água suficiente e evitar o ar seco.</li>
+            <li>Buscar atendimento ao sentir falta de ar persistente.</li>
+            <li>Evitar automedicação e seguir orientação médica.</li>
           </ul>
         </div>
 
         <div class="box-item">
-          <h4>Curiosidades </h4>
+          <h4>Curiosidades</h4>
           <ul>
-            <li>Respiramos de 12 a 20 vezes por minuto em repouso (adulto).</li>
-            <li>Uma pessoa média respira ~20 000 vezes por dia.</li>
-            <li>A área de troca (alvéolos) pode chegar a dezenas de metros quadrados.</li>
+            <li>Respiramos cerca de 20 mil vezes por dia.</li>
             <li>O pulmão direito é maior que o esquerdo.</li>
-            <li>Os pulmões flutuam por conter ar.</li>
-            <li>Surfactante pulmonar evita o colapso alveolar.</li>
-            <li>O diafragma realiza ~20 000 contrações/dia em repouso.</li>
-            <li>Atividade física aumenta eficiência ventilatória.</li>
-            <li>Bocejar tem relação com equilíbrio de gases e estados de alerta.</li>
-            <li>Os cílios nasais e o muco formam a primeira barreira imunológica das vias aéreas.</li>
+            <li>Os pulmões podem flutuar na água.</li>
+            <li>Os alvéolos cobrem uma área semelhante a uma quadra de tênis.</li>
+            <li>O surfactante é essencial para evitar o colapso dos alvéolos.</li>
+            <li>Durante o sono, a respiração desacelera naturalmente.</li>
+            <li>O nariz aquece e filtra o ar antes que ele chegue aos pulmões.</li>
+            <li>O bocejo ajuda a equilibrar o oxigênio no sangue.</li>
+            <li>Em repouso, uma respiração dura cerca de 5 segundos.</li>
+            <li>O cérebro regula automaticamente a frequência respiratória.</li>
           </ul>
         </div>
-      </div>
-
-      <div class="image-gallery">
-        <img src="images/asthma.jpg" alt="Asma">
-        <img src="images/grafico-da-capacidade-respiratoria.jpg" alt="Capacidade respiratória">
-        <img src="images/ultimo.png" alt="Ilustração geral">
       </div>
     </section>
-
-    <!-- Curiosidades ampliadas já incluídas acima -->
 
     <!-- Interações -->
     <section id="interacoes" class="content-section alt fade-up">
-      <h2>Interações com outros sistemas </h2>
-      <p class="lead">O sistema respiratório está profundamente interligado a diversos sistemas do corpo — segue um resumo das principais interações com explicação da importância de cada uma.</p>
-
+      <h2>Interações com outros sistemas</h2>
+      <p class="lead">O sistema respiratório atua em conjunto com outros sistemas do corpo, garantindo a homeostase e a sobrevivência celular.</p>
       <ul class="interaction-list">
-        <li><strong>Circulatório:</strong> hematose — O₂ passa dos alvéolos para o sangue; CO₂ do sangue para os alvéolos; hemoglobina transporta O₂. Essencial para entrega de oxigênio a todos os tecidos. :contentReference[oaicite:5]{index=5}</li>
-        <li><strong>Nervoso:</strong> centros respiratórios (bulbo e ponte) regulam ritmo e profundidade respiratória conforme níveis de CO₂/pH; reflexos (tosse, reflexo de deglutição) protegem as vias aéreas.</li>
-        <li><strong>Muscular:</strong> diafragma e intercostais promovem ventilação; músculos acessórios aumentam ventilação em esforço.</li>
-        <li><strong>Imunológico:</strong> muco, cílios, macrófagos alveolares e imunoglobulinas protegem contra patógenos; resposta inflamatória medeia doenças como asma e pneumonia. :contentReference[oaicite:6]{index=6}</li>
-        <li><strong>Endócrino:</strong> hormônios (adrenalina, cortisol) modulam gasto respiratório em situação de estresse; pH sanguíneo altera ação enzimática e hormonal.</li>
-        <li><strong>Digestório:</strong> epiglote evita entrada de alimentos nas vias respiratórias; metabolismo digestório requer O₂ para oxidação de nutrientes.</li>
-        <li><strong>Renal:</strong> função renal e respiratória interagem na regulação ácido-básica (compensação respiratória/renal do pH).</li>
-        <li><strong>Tegumentar (pele):</strong> barreiras externas e trocas evaporativas influenciam hidratação das vias aéreas.</li>
-        <li><strong>Linfa/Imunidade:</strong> drenagem linfática retira secreções e participa da resposta imune pulmonar.</li>
-        <li><strong>Reprodutor:</strong> gravidez altera mecânica respiratória (elevando frequência e volume corrente) — adaptações fisiológicas importantes.</li>
+        <li><strong>Circulatório:</strong> realiza a hematose e transporta gases; o coração bombeia o sangue oxigenado.</li>
+        <li><strong>Nervoso:</strong> controla o ritmo respiratório com base no pH e no CO₂.</li>
+        <li><strong>Muscular:</strong> fornece o movimento mecânico da respiração através do diafragma e músculos intercostais.</li>
+        <li><strong>Endócrino:</strong> hormônios como adrenalina e cortisol influenciam o ritmo respiratório em situações de estresse.</li>
+        <li><strong>Digestório:</strong> a epiglote impede que alimentos entrem nas vias aéreas.</li>
+        <li><strong>Renal:</strong> regula o equilíbrio ácido-básico junto com o respiratório.</li>
+        <li><strong>Imunológico:</strong> defesas locais protegem contra agentes patogênicos inalados.</li>
+        <li><strong>Tegumentar:</strong> ajuda na manutenção da temperatura corporal e trocas gasosas menores.</li>
+        <li><strong>Linfático:</strong> participa da drenagem de líquidos e defesa pulmonar.</li>
+        <li><strong>Reprodutor:</strong> adaptações respiratórias durante a gravidez aumentam a eficiência de oxigenação.</li>
       </ul>
-
       <div class="image-gallery">
-        <img src="images/interacao-entre-cerebro-coracao-e-sistema-respiratorio.jpg" alt="Interações entre sistemas">
-        <img src="images/interacoes.jpg" alt="Integração entre sistemas">
+        <figure>
+          <img src="images/interacao-entre-cerebro-coracao-e-sistema-respiratorio.jpg" alt="Interações entre sistemas">
+          <figcaption class="figcaption"><em>Figura 10 — Integração entre os sistemas respiratório, circulatório e nervoso.</em></figcaption>
+        </figure>
       </div>
-    </section>
-
-    <!-- Vídeo -->
-    <section id="video" class="content-section fade-up">
-      <h2>Vídeo explicativo</h2>
-      <p>Vídeo produzido pelo grupo — serve como revisão visual do sistema respiratório e das estruturas estudadas.</p>
-      <video controls class="video-box">
-        <source src="videos/meu-video.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
     </section>
 
     <!-- Gráfico -->
     <section id="grafico" class="content-section fade-up">
-      <h2>Composição do ar inspirado e expirado (gráfico)</h2>
-      <p class="lead">Valores aproximados (em %): O₂, CO₂ e N₂ — ilustrando a perda de O₂ e ganho de CO₂ no ar expirado.</p>
+      <h2>Composição do ar inspirado e expirado</h2>
+      <p class="lead">Valores médios (%): O₂ = 21%, CO₂ = 0,04% e N₂ = 78% no ar inspirado; O₂ = 16%, CO₂ = 4% e N₂ = 78% no ar expirado.</p>
+
       <canvas id="respChart" width="700" height="360" style="max-width:100%;"></canvas>
+
+      <h3>Volumes e Capacidades Pulmonares</h3>
+      <p>
+        Gráfico de volumes e capacidades pulmonares, mostrando as variações do ar nos pulmões durante a respiração.  
+        A soma desses volumes forma as capacidades pulmonares, como:
+        <ul>
+          <li><strong>Capacidade Vital (CV):</strong> soma de VC + VRI + VRE.</li>
+          <li><strong>Capacidade Pulmonar Total (CPT):</strong> soma da capacidade vital com o volume residual.</li>
+        </ul>
+        Durante o ciclo respiratório, os pulmões se expandem e se contraem constantemente, permitindo trocas gasosas eficientes.
+      </p>
+      <figure>
+        <img src="images/grafico-da-capacidade-respiratoria.jpg" alt="Gráfico de volumes e capacidades pulmonares" class="main-img">
+        <figcaption class="figcaption"><em>Figura 11 — Gráfico de volumes e capacidades pulmonares durante a respiração.</em></figcaption>
+      </figure>
     </section>
 
     <!-- Quiz -->
     <section id="quiz" class="content-section fade-up">
-      <h2>Quiz educativo (com feedback)</h2>
-      <p class="lead">Teste rápido — o quiz dá feedback imediato e uma explicação curta.</p>
+      <h2>Quiz Educativo 🫁</h2>
+      <p class="lead">Teste seus conhecimentos sobre o sistema respiratório e aprenda com as explicações científicas.</p>
       <div id="quiz-container">
         <div id="question"></div>
         <div id="options"></div>
@@ -238,139 +161,18 @@
     </section>
   </main>
 
-  <!-- RODAPÉ -->
+  <!-- Rodapé -->
   <footer id="referencias">
-    <h3>Referências bibliográficas (seleção)</h3>
-
-    <p>BRASIL. Ministério da Saúde. <strong>Pulmão.</strong> Portal Gov.br. Disponível em: <a href="https://www.gov.br/saude/pt-br/composicao/saes/snt/pulmao" target="_blank">https://www.gov.br/saude/...</a>. Acesso em: 15 out. 2025. :contentReference[oaicite:7]{index=7}</p>
-
-    <p>NHLBI / NIH. <strong>How the Lungs Work.</strong> National Heart, Lung, and Blood Institute. Disponível em: <a href="https://www.nhlbi.nih.gov/health/lungs/respiratory-system" target="_blank">https://www.nhlbi.nih.gov/...</a>. Acesso em: 15 out. 2025. :contentReference[oaicite:8]{index=8}</p>
-
-    <p>SOCIEDADE BRASILEIRA DE PNEUMOLOGIA E TISIOL. <strong>Manual/Diretrizes DPOC 2024.</strong> Disponível em: <a href="https://sbpt.org.br" target="_blank">https://sbpt.org.br</a>. Acesso em: 15 out. 2025. :contentReference[oaicite:9]{index=9}</p>
-
-    <p>BRASILESCOLA. <strong>Alvéolos pulmonares / Sistema respiratório.</strong> Disponível em: <a href="https://brasilescola.uol.com.br" target="_blank">https://brasilescola.uol.com.br/...</a>. Acesso em: 15 out. 2025. :contentReference[oaicite:10]{index=10}</p>
-
-    <p>BVS / Ministério da Saúde. <strong>Saúde Pulmonar para Todos.</strong> Disponível em: <a href="https://bvsms.saude.gov.br" target="_blank">https://bvsms.saude.gov.br/...</a>. Acesso em: 15 out. 2025. :contentReference[oaicite:11]{index=11}</p>
-
+    <h3>Referências Bibliográficas</h3>
+    <p>MOORE, K. L.; PERSAUD, T. V. N.; TORCHIA, M. G. <strong>Embriologia Clínica.</strong> 10. ed. Rio de Janeiro: Elsevier, 2016.</p>
+    <p>JUNQUEIRA, L. C.; CARNEIRO, J. <strong>Histologia Básica: texto e atlas.</strong> 14. ed. Rio de Janeiro: Guanabara Koogan, 2017.</p>
+    <p>BRASIL. Ministério da Saúde. <strong>Pulmão – Estrutura e Função.</strong> Disponível em: <a href="https://www.gov.br/saude/" target="_blank">https://www.gov.br/saude/</a>. Acesso em: 15 out. 2025.</p>
+    <p>FIOCRUZ. <strong>Como funciona o sistema respiratório humano.</strong> Fundação Oswaldo Cruz, 2024. Disponível em: <a href="https://www.fiocruz.br" target="_blank">https://www.fiocruz.br</a>. Acesso em: 15 out. 2025.</p>
+    <p>NHLBI – National Heart, Lung, and Blood Institute. <strong>How the Lungs Work.</strong> Disponível em: <a href="https://www.nhlbi.nih.gov/health/lungs/respiratory-system" target="_blank">https://www.nhlbi.nih.gov</a>. Acesso em: 15 out. 2025.</p>
+    <p>SOCIEDADE BRASILEIRA DE PNEUMOLOGIA E TISIOLOGIA. <strong>Diretrizes para Doenças Respiratórias.</strong> 2024. Disponível em: <a href="https://sbpt.org.br" target="_blank">https://sbpt.org.br</a>.</p>
     <p class="copy">© 2025 | Grupo 2 — Biossistemas do Corpo Humano</p>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script>
-    // menu mobile
-    const menuToggle = document.getElementById('menuToggle');
-    const menuList = document.getElementById('menuList');
-    menuToggle.addEventListener('click', () => menuList.classList.toggle('active'));
-
-    // back to top
-    const btnTop = document.getElementById('btnTop');
-    window.addEventListener('scroll', () => {
-      btnTop.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
-    });
-    btnTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-
-    // smart image loader with fallback (tries several extensions if one fails)
-    function tryAltImg(imgEl, baseName) {
-      const variants = [
-        baseName,
-        baseName.replace('.png','.jpg'),
-        baseName.replace('.jpg','.png'),
-        baseName.replace('.png','-1.jpg'),
-        baseName.replace('.jpg','-1.png')
-      ];
-      let i = 0;
-      imgEl.onerror = function() {
-        i++;
-        if (i < variants.length) {
-          imgEl.src = variants[i];
-        } else {
-          // final fallback to a generic placeholder
-          imgEl.src = 'images/placeholder.png';
-        }
-      };
-    }
-
-    // find all images with data-src and attach src + fallback
-    document.querySelectorAll('.smart-img').forEach(img=>{
-      const src = img.getAttribute('data-src');
-      img.src = src;
-      tryAltImg(img, src);
-    });
-
-    // Also attach fallback to normal gallery images
-    document.querySelectorAll('.image-gallery img, .main-img, .hero-img').forEach(img=>{
-      const src = img.src; // already set
-      // if src is empty, skip
-      if(!src) return;
-      tryAltImg(img, src);
-    });
-
-    // Chart (animated)
-    const canvas = document.getElementById('respChart');
-    const ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
-    if (ctx) {
-      const gases = ['O₂','CO₂','N₂'];
-      const inspirado = [21, 0.04, 78];
-      const expirado = [16, 4, 78];
-      let progress = 0;
-      function drawBars() {
-        progress += 0.03;
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.font = '14px Poppins';
-        ctx.fillStyle = '#022';
-        ctx.fillText('Insp. vs Exp. (%)', 20, 24);
-        gases.forEach((g,i)=>{
-          const x = 80 + i*200;
-          const inspH = (inspirado[i]*2.6) * Math.min(progress,1);
-          const expH  = (expirado[i]*2.6)  * Math.min(progress,1);
-          ctx.fillStyle = '#00a884';
-          ctx.fillRect(x, 320 - inspH, 40, inspH);
-          ctx.fillStyle = '#00866f';
-          ctx.fillRect(x+60, 320 - expH, 40, expH);
-          ctx.fillStyle = '#000';
-          ctx.fillText(g, x+10, 340);
-        });
-        if (progress < 1.05) requestAnimationFrame(drawBars);
-      }
-      drawBars();
-    }
-
-    // Quiz with feedback/explanations
-    const quizData = [
-      {q:'Qual é a principal função do sistema respiratório?', opts:['Troca de gases','Digestão','Filtração'], a:'Troca de gases', exp:'Permite O₂ às células e remoção de CO₂.'},
-      {q:'Onde ocorrem as trocas gasosas?', opts:['Traqueia','Alvéolos','Brônquios'], a:'Alvéolos', exp:'Alvéolos têm paredes finas e capilares próximos.'},
-      {q:'O que é DPOC?', opts:['Doença Viral','Doença Pulmonar Obstrutiva Crônica','Câncer'], a:'Doença Pulmonar Obstrutiva Crônica', exp:'Inclui bronquite crônica e enfisema, com associação ao tabagismo.'},
-      {q:'Qual estrutura evita a entrada de alimentos nas vias aéreas?', opts:['Epiglote','Laringe','Pulmão'], a:'Epiglote', exp:'A epiglote fecha a laringe durante a deglutição.'}
-    ];
-    let i=0, score=0;
-    const questionEl = document.getElementById('question');
-    const optionsEl = document.getElementById('options');
-    const scoreEl = document.getElementById('score');
-
-    function loadQ(){
-      const it = quizData[i];
-      questionEl.innerHTML = `<h3>${it.q}</h3>`;
-      optionsEl.innerHTML = '';
-      it.opts.forEach(opt=>{
-        const b=document.createElement('button');
-        b.className='option-btn';
-        b.textContent=opt;
-        b.onclick=()=>{
-          const ok = opt===it.a;
-          optionsEl.innerHTML = `<p><strong>${ok?'Correto!':'Incorreto.'}</strong> ${it.exp}</p>`;
-          if(ok) score++;
-          setTimeout(()=>{ i++; if(i<quizData.length) loadQ(); else finish(); }, 1200);
-        };
-        optionsEl.appendChild(b);
-      });
-    }
-    function finish(){
-      questionEl.innerHTML='';
-      optionsEl.innerHTML='';
-      scoreEl.innerHTML=`<h3>Você acertou ${score} de ${quizData.length} perguntas.</h3>`;
-    }
-    loadQ();
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
