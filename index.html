@@ -328,6 +328,22 @@
       sEl.innerHTML=`<h3>Você acertou ${score} de ${quizData.length} perguntas!</h3>`;
     }
     loadQ();
+    // --- Verificador de imagens no console ---
+document.addEventListener("DOMContentLoaded", () => {
+  const imgs = document.querySelectorAll("img");
+  console.log(`🔍 Verificando ${imgs.length} imagens no site...`);
+  
+  imgs.forEach(img => {
+    const testImg = new Image();
+    testImg.onload = () => {
+      console.log(`✅ OK: ${img.src}`);
+    };
+    testImg.onerror = () => {
+      console.warn(`⚠️ ERRO: imagem não encontrada → ${img.src}`);
+    };
+    testImg.src = img.src;
+  });
+});
   </script>
 </body>
 </html>
