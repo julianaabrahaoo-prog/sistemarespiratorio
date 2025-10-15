@@ -216,6 +216,14 @@ if (menuToggle && menuList) {
   menuToggle.addEventListener('click', () => {
     menuList.classList.toggle('active');
   });
+  // Fecha o menu ao clicar em um link (modo mobile)
+document.querySelectorAll('#menuList a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (menuList.classList.contains('active')) {
+      menuList.classList.remove('active');
+    }
+  });
+});
 }
 
 
