@@ -1,203 +1,328 @@
-/* ======== CONFIGURAÇÕES GERAIS ======== */
+/* -------------------------
+   CONFIGURAÇÕES GERAIS
+--------------------------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: linear-gradient(135deg, #e9fff4, #ffffff, #e9fff4);
-  background-size: 400% 400%;
-  animation: fundoAnimado 12s ease infinite;
-  color: #222;
-  line-height: 1.7;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #e9f8f5 0%, #ffffff 100%);
+  overflow-x: hidden;
 }
 
-/* ======== ANIMAÇÃO DE FUNDO ======== */
-@keyframes fundoAnimado {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ======== NAVBAR ======== */
+/* -------------------------
+   NAVBAR
+--------------------------*/
 .navbar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
   background-color: #00a884;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.navbar ul {
-  list-style: none;
+.menu-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menuList {
+  display: flex;
+  list-style: none;
   gap: 20px;
 }
 
-.navbar a {
-  color: #fff;
+#menuList li a {
+  color: white;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
 }
 
-.navbar a:hover {
-  color: #c6ffec;
+#menuList li a:hover {
+  color: #c9f5ea;
 }
 
-/* ======== BOTÃO HAMBÚRGUER ANIMADO ======== */
+/* Botão do menu (hambúrguer) */
 .menu-toggle {
-  width: 32px;
-  height: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: none;
+  font-size: 1.8rem;
   background: none;
+  color: white;
   border: none;
   cursor: pointer;
-  z-index: 1000;
 }
 
-.menu-toggle .bar {
-  height: 4px;
-  width: 100%;
-  background-color: white;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.menu-toggle.open .bar:nth-child(1) {
-  transform: rotate(45deg) translateY(10px);
-}
-
-.menu-toggle.open .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-10px);
-}
-
-/* ======== MENU MOBILE ======== */
-@media (max-width: 768px) {
+/* Menu responsivo */
+@media (max-width: 900px) {
   #menuList {
+    display: none;
+    flex-direction: column;
+    background-color: #00a884;
     position: absolute;
     top: 60px;
     left: 0;
-    right: 0;
-    background: rgba(0, 168, 132, 0.95);
-    backdrop-filter: blur(6px);
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 0;
-    transform: translateY(-200%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-  }
-  #menuList.active {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-  #menuList a {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
   }
-  .navbar ul {
-    display: none;
+
+  #menuList.active {
+    display: flex;
+    animation: fadeInMenu 0.3s ease;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  @keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
 
-/* ======== CABEÇALHO ======== */
+/* -------------------------
+   CABEÇALHO
+--------------------------*/
 .hero {
   position: relative;
-  height: 85vh;
+  height: 75vh;
+  background: url("images/ultimo.png") center/cover no-repeat fixed;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   color: white;
-  overflow: hidden;
+  text-align: center;
 }
 
-.hero-img {
+.hero .overlay {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5);
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 900px;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+  animation: fadeInUp 1.2s ease;
 }
 
-.hero h1 {
-  font-size: 3rem;
+.hero-content h1 {
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.integrantes {
-  font-size: 0.95rem;
+.hero-content p {
   margin-top: 10px;
-  color: #e8f9f1;
-  line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
 }
 
-/* ======== BOTÃO VOLTAR AO TOPO ======== */
+/* -------------------------
+   SEÇÕES DE CONTEÚDO
+--------------------------*/
+.content-section {
+  padding: 60px 10%;
+  background-color: white;
+  border-radius: 20px;
+  margin: 50px auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.4s;
+}
+
+.content-section.alt {
+  background-color: #f4fdfb;
+}
+
+.content-section h2 {
+  text-align: center;
+  color: #00a884;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.content-section p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* -------------------------
+   IMAGENS
+--------------------------*/
+.main-img {
+  display: block;
+  margin: 25px auto;
+  max-width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.img-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* -------------------------
+   GRID DE CARTÕES
+--------------------------*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* -------------------------
+   BOX DE DOENÇAS/CURIOSIDADES
+--------------------------*/
+.box-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.box-item {
+  background: #e9f8f5;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.box-item:hover {
+  transform: scale(1.02);
+}
+
+.box-item h3 {
+  color: #00866f;
+  margin-bottom: 10px;
+}
+
+/* -------------------------
+   VÍDEO
+--------------------------*/
+.video-box {
+  display: block;
+  margin: 30px auto;
+  max-width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------
+   BOTÃO VOLTAR AO TOPO
+--------------------------*/
 #btnTop {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 25px;
+  right: 25px;
   background-color: #00a884;
-  color: #fff;
+  color: white;
   border: none;
-  padding: 10px 15px;
   border-radius: 50%;
-  font-size: 1.2rem;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
   cursor: pointer;
   display: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
+
 #btnTop:hover {
   background-color: #00866f;
 }
 
-/* ======== RODAPÉ ======== */
+/* -------------------------
+   RODAPÉ
+--------------------------*/
 footer {
-  background-color: #00a884;
-  color: #fff;
+  background: #00a884;
+  color: white;
   text-align: center;
-  padding: 50px 10%;
+  padding: 40px 20px;
 }
 
 footer a {
-  color: #c6ffec;
+  color: #c9f5ea;
   text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+.copy {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* -------------------------
+   ANIMAÇÕES
+--------------------------*/
+.fade-up {
+  animation: fadeUp 0.8s ease;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
