@@ -213,26 +213,43 @@
       </video>
     </section>
 
+
     <!-- GRÁFICO -->
-    <section id="grafico" class="content-section fade-up">
-      <h2>Volumes e capacidades pulmonares</h2>
-      <p>
-        Gráfico de volumes e capacidades pulmonares, mostrando as variações do ar nos pulmões durante a respiração.  
-        A soma desses volumes forma as capacidades pulmonares:
-        <ul>
-          <li><strong>Capacidade vital (CV):</strong> soma de VC + VRI + VRE.</li>
-          <li><strong>Capacidade pulmonar total (CPT):</strong> soma da capacidade vital com o volume residual.</li>
-        </ul>
-        Os pulmões se expandem e se contraem durante o ciclo respiratório.
-      </p>
-      <div class="image-gallery">
-        <figure>
-          <img src="images/grafico-da-capacidade-respiratoria.jpg" alt="Gráfico de volumes e capacidades pulmonares">
-          <figcaption class="image-caption">Variações de volume durante os ciclos respiratórios.</figcaption>
-        </figure>
-      </div>
-      <canvas id="respChart" width="700" height="360" style="max-width:100%;"></canvas>
-    </section>
+<section id="grafico" class="content-section fade-up">
+  <h2>Volumes e capacidades pulmonares</h2>
+  <p>
+    Gráfico de volumes e capacidades pulmonares, mostrando as variações do ar nos pulmões durante a respiração.  
+    A soma desses volumes forma as capacidades pulmonares:
+    <ul>
+      <li><strong>Capacidade vital (CV):</strong> soma de VC + VRI + VRE.</li>
+      <li><strong>Capacidade pulmonar total (CPT):</strong> soma da capacidade vital com o volume residual.</li>
+    </ul>
+    Os pulmões se expandem e se contraem durante o ciclo respiratório.
+  </p>
+
+  <div class="image-gallery">
+    <figure>
+      <img src="images/grafico-da-capacidade-respiratoria.jpg" alt="Gráfico de volumes e capacidades pulmonares">
+      <figcaption class="image-caption">Variações de volume durante os ciclos respiratórios.</figcaption>
+    </figure>
+  </div>
+
+  <!-- 🔹 NOVO BLOCO DE IDENTIFICAÇÃO DO GRÁFICO DE GASES -->
+  <h3 style="margin-top: 30px;">Composição do ar inspirado e expirado</h3>
+  <p class="lead">
+    O gráfico abaixo compara as proporções de <strong>oxigênio (O₂)</strong>, <strong>dióxido de carbono (CO₂)</strong> e <strong>nitrogênio (N₂)</strong> 
+    no ar que inspiramos e expiramos. Observe que durante a respiração, parte do O₂ é absorvida pelo sangue e o CO₂ é liberado.
+  </p>
+
+  <canvas id="respChart" width="700" height="360" style="max-width:100%;"></canvas>
+
+  <!-- 🔹 LEGENDA DO GRÁFICO -->
+  <div class="chart-legend">
+    <div><span class="legend-color" style="background-color:#00a884;"></span> Ar inspirado</div>
+    <div><span class="legend-color" style="background-color:#007d63;"></span> Ar expirado</div>
+  </div>
+</section>
+
 
     <!-- QUIZ -->
     <section id="quiz" class="content-section fade-up">
