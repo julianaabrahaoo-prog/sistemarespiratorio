@@ -1005,3 +1005,21 @@ nav.navbar a.active {
     padding-top: 60px; /* impede que o menu cubra a imagem */
   }
 }
+/* ======== CORREÇÃO: TEXTO DOS INTEGRANTES MAIS VISÍVEL ======== */
+.hero-content .integrantes {
+  color: #ffffff; /* texto branco por padrão */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* contorno escuro pra destacar */
+  font-weight: 500;
+}
+
+/* Versão para telas pequenas (texto mais legível no mobile) */
+@media (max-width: 768px) {
+  .hero-content .integrantes {
+    color: #012; /* muda pra escuro sobre o fundo claro do mobile */
+    text-shadow: none;
+    background: rgba(255,255,255,0.7);
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+}
