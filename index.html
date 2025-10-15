@@ -403,6 +403,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 </script>
+<!-- ===== SCRIPT DE DESTAQUE DO MENU AO ROLAR ===== -->
+<script>
+  (function () {
+    const sections = document.querySelectorAll("main section, header, section");
+    const navLinks = document.querySelectorAll("nav.navbar a");
+
+    function onScroll() {
+      let current = "";
+      sections.forEach(section => {
+        const top = section.offsetTop - 100; // distância para ativar destaque
+        if (window.scrollY >= top) current = section.getAttribute("id");
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        const href = link.getAttribute("href");
+        if (href && href.includes(`#${current}`)) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("load", onScroll);
+    window.addEventListener("resize", onScroll);
+  })();
+</script>
+</body>
+</html>
 
 </body>
 </html>
