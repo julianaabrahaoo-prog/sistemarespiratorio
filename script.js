@@ -208,22 +208,59 @@ btnCuriosidades.addEventListener('click', () => {
     btnCuriosidades.textContent = 'Mostrar mais curiosidades';
   }
 });
-// Menu mobile toggle
-const menuToggle = document.getElementById('menuToggle');
-const menuList = document.getElementById('menuList');
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+  const menuLinks = document.querySelectorAll('#menuList a');
 
-if (menuToggle && menuList) {
-  menuToggle.addEventListener('click', () => {
+  console.log('[menu] iniciando controle do menu');
+
+  if (!menuToggle) return console.error('[menu] botão #menuToggle não encontrado');
+  if (!menuList) return console.error('[menu] lista #menuList não encontrada');
+
+  // abre / fecha com o botão
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     menuList.classList.toggle('active');
+    console.log('[menu] toggle, ativo:', menuList.classList.contains('active'));
   });
-  // Fecha o menu ao clicar em um link (modo mobile)
-document.querySelectorAll('#menuList a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (menuList.classList.contains('active')) {
+
+  // fecha quando clica em um link do menu
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // pequena margem: só fechar em telas pequenas (opcional)
+      if (window.innerWidth <= 768) {
+        if (menuList.classList.contains('active')) {
+          menuList.classList.remove('active');
+          console.log('[menu] link clicado -> menu fechado');
+        }
+      } else {
+        // em desktop não forçamos fechar
+        console.log('[menu] link clicado em desktop (não fecha menu)');
+      }
+    });
+  });
+
+  // fecha se clicar fora do menu (útil em mobile)
+  document.addEventListener('click', (e) => {
+    const isClickInside = menuList.contains(e.target) || menuToggle.contains(e.target);
+    if (!isClickInside && menuList.classList.contains('active')) {
       menuList.classList.remove('active');
+      console.log('[menu] clique fora -> menu fechado');
     }
   });
-});
-}
 
+  // fecha o menu ao redimensionar para tela maior (evita menu aberto no desktop)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && menuList.classList.contains('active')) {
+      menuList.classList.remove('active');
+      console.log('[menu] resize >768px -> menu fechado');
+    }
+  });
+
+  // DEBUG: mostra o número de links
+  console.log('[menu] links encontrados:', menuLinks.length);
+});
+</script>
 
