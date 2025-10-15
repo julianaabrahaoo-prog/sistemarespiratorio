@@ -862,3 +862,67 @@ nav.navbar a.active {
     padding-top: 90px; /* espaço extra pro header */
   }
 }
+/* ======== CORREÇÃO HERO MOBILE ======== */
+@media (max-width: 768px) {
+
+  .hero {
+    height: 100vh; /* ocupa a tela toda */
+    padding: 60px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-img {
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.55);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.75); /* fundo suave pra ler o texto */
+    color: #033; /* texto escuro */
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+    color: #007d63;
+    margin-bottom: 10px;
+  }
+
+  .hero-content .subtitle {
+    font-size: 1.1rem;
+    color: #005c4b;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .hero-content .integrantes {
+    font-size: 0.9rem;
+    color: #022;
+    line-height: 1.5;
+  }
+}
+
+/* ======== AJUSTE NAVBAR NO MOBILE ======== */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  body {
+    padding-top: 70px; /* evita que o menu cubra o conteúdo */
+  }
+}
