@@ -177,4 +177,23 @@ function finishQuiz() {
 }
 
 loadQuestion();
+// === Mostrar mais curiosidades ===
+const btnCuriosidades = document.getElementById('btnCuriosidades');
+const extras = document.querySelectorAll('.curiosidade.extra');
+let mostrando = false;
+
+btnCuriosidades.addEventListener('click', () => {
+  mostrando = !mostrando;
+  extras.forEach(c => {
+    if (mostrando) {
+      c.classList.add('show');
+    } else {
+      c.classList.remove('show');
+    }
+  });
+  btnCuriosidades.textContent = mostrando 
+    ? 'Mostrar menos curiosidades ↑'
+    : 'Mostrar mais curiosidades ↓';
+});
+
 
