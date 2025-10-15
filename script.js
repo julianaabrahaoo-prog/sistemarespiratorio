@@ -208,5 +208,14 @@ btnCuriosidades.addEventListener('click', () => {
     btnCuriosidades.textContent = 'Mostrar mais curiosidades';
   }
 });
+// Menu mobile toggle
+const menuToggle = document.getElementById('menuToggle');
+const menuList = document.getElementById('menuList');
+
+if (menuToggle && menuList) {
+  menuToggle.addEventListener('click', () => {
+    menuList.classList.toggle('active');
+  });
+}
 
 
