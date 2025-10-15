@@ -618,3 +618,6 @@ nav.navbar a.active {
   opacity: 1;
   transform: translateY(0);
 }
+#curiosidadesExtras {
+  transition: opacity 300ms ease, transform 300ms ease;
+}
