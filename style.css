@@ -482,18 +482,38 @@ body {
   padding-top: 72px;
 }
 
-/* Estilo do link ativo no menu */
-nav.navbar ul#menuList li a.active,
-nav.navbar a.active {
-  color: #00a884;           /* destaque principal */
-  font-weight: 700;
-  border-bottom: 3px solid #00a884;
-  padding-bottom: 8px;
-  transition: all 0.25s ease;
+/* ===== MENU FIXO (mantém o estilo original) ===== */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007d63; /* ou a cor original do seu menu */
+  z-index: 9999;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Pequeno ajuste para links do menu em telas pequenas (opcional) */
-@media (max-width: 600px) {
-  body { padding-top: 84px; } /* se a navbar muda de altura no mobile */
-  nav.navbar ul#menuList { gap: 10px; }
+/* Garante que o conteúdo abaixo não fique encoberto */
+body {
+  padding-top: 80px; /* ajuste conforme altura real da navbar */
+}
+
+/* Mantém cor dos links originais */
+nav.navbar ul#menuList li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Cor de destaque quando passa o mouse */
+nav.navbar ul#menuList li a:hover {
+  color: #a7f2d0;
+}
+
+/* Quando ativo (seção atual) */
+nav.navbar a.active {
+  color: #a7f2d0;
+  border-bottom: 2px solid #a7f2d0;
+  padding-bottom: 5px;
 }
