@@ -464,3 +464,36 @@ nav a.active {
   background-color: #fdeaea;
   border-left: 4px solid #ff5c5c;
 }
+/* ===== Navbar fixa e destaque da seção ativa ===== */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(2, 32, 27, 0.06);
+  backdrop-filter: blur(4px);
+}
+
+/* Garante que o conteúdo abaixo da navbar não fique escondido */
+body {
+  /* ajuste esse valor se a sua navbar tiver altura diferente (ex: 70px) */
+  padding-top: 72px;
+}
+
+/* Estilo do link ativo no menu */
+nav.navbar ul#menuList li a.active,
+nav.navbar a.active {
+  color: #00a884;           /* destaque principal */
+  font-weight: 700;
+  border-bottom: 3px solid #00a884;
+  padding-bottom: 8px;
+  transition: all 0.25s ease;
+}
+
+/* Pequeno ajuste para links do menu em telas pequenas (opcional) */
+@media (max-width: 600px) {
+  body { padding-top: 84px; } /* se a navbar muda de altura no mobile */
+  nav.navbar ul#menuList { gap: 10px; }
+}
