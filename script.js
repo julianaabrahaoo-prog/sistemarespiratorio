@@ -195,5 +195,18 @@ btnCuriosidades.addEventListener('click', () => {
     ? 'Mostrar menos curiosidades ↑'
     : 'Mostrar mais curiosidades ↓';
 });
+// ======== MOSTRAR MAIS CURIOSIDADES ========
+const btnCuriosidades = document.getElementById('btnCuriosidades');
+const curiosidadesExtras = document.getElementById('curiosidadesExtras');
+
+btnCuriosidades.addEventListener('click', () => {
+  if (curiosidadesExtras.style.display === 'none') {
+    curiosidadesExtras.style.display = 'block';
+    btnCuriosidades.textContent = 'Mostrar menos curiosidades';
+  } else {
+    curiosidadesExtras.style.display = 'none';
+    btnCuriosidades.textContent = 'Mostrar mais curiosidades';
+  }
+});
 
 
