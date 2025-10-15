@@ -16,7 +16,11 @@ body {
 #menuList a:hover{ background:rgba(255,255,255,0.06); }
 
 /* mobile */
-@media(max-width:768px){ .menu-toggle{ display:block; } #menuList{ display:none; position:absolute; top:56px; left:0; right:0; background:#00a884; flex-direction:column; padding:12px 0; } #menuList.active{ display:flex; } }
+@media(max-width:768px){
+  .menu-toggle{ display:block; }
+  #menuList{ display:none; position:absolute; top:56px; left:0; right:0; background:#00a884; flex-direction:column; padding:12px 0; }
+  #menuList.active{ display:flex; }
+}
 
 /* HERO */
 .hero{ position:relative; height:72vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; }
@@ -27,11 +31,33 @@ body {
 .integrantes{ font-size:0.95rem; opacity:0.95; }
 
 /* top button */
-#btnTop{ position:fixed; right:20px; bottom:20px; background:#007d63; color:#fff; border:0; width:44px; height:44px; border-radius:50%; display:none; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.15); }
+#btnTop{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#007d63;
+  color:#fff;
+  border:0;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
 
 /* SECTIONS */
 main{ margin-top:76px; }
-.content-section{ max-width:1100px; margin:36px auto; padding:28px; background:#fff; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.06); }
+.content-section{
+  max-width:1100px;
+  margin:36px auto;
+  padding:28px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.06);
+}
 .content-section.alt{ background:#f5fffb; }
 .content-section h2{ color:#007d63; margin-bottom:14px; font-size:1.8rem; }
 .lead{ font-size:1.03rem; margin-bottom:12px; }
@@ -68,10 +94,29 @@ footer h3{ color:#eafff6; margin-bottom:10px; }
 footer p{ margin-bottom:8px; font-size:0.95rem; }
 .copy{ margin-top:10px; font-weight:700; color:#e6fff9; }
 
-/* responsive tweaks */
-@media(max-width:900px){ .image-gallery img{ width:220px; } .hero h2{ font-size:2rem; } .content-section{ padding:18px; margin:18px 12px; } .grid{ grid-template-columns:1fr; } .video-box{ width:100%; } }
+/* ======== LEGENDAS CIENTÍFICAS ======== */
+figure { text-align:center; margin:18px auto; max-width:700px; }
+.figcaption {
+  font-size:0.9rem;
+  font-style:italic;
+  color:#333;
+  margin-top:6px;
+  text-align:center;
+  line-height:1.4;
+}
+.figcaption em { color:#007d63; font-weight:500; }
 
-/* animations */
+/* RESPONSIVE TWEAKS */
+@media(max-width:900px){
+  .image-gallery img{ width:220px; }
+  .hero h2{ font-size:2rem; }
+  .content-section{ padding:18px; margin:18px 12px; }
+  .grid{ grid-template-columns:1fr; }
+  .video-box{ width:100%; }
+  figure{ max-width:95%; }
+}
+
+/* ANIMAÇÕES */
 .fade-in{ opacity:0; transform:translateY(10px); animation:fadeIn .9s forwards; }
 .fade-up{ opacity:0; transform:translateY(14px); animation:fadeUp 1s forwards; }
 @keyframes fadeIn{ to{ opacity:1; transform:none; } }
