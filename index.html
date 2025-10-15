@@ -476,6 +476,55 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+...
+<footer>...</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btnCuriosidades');
+  const extras = document.getElementById('curiosidadesExtras');
+
+  if (!btn) {
+    console.error('Botão de curiosidades não encontrado: elemento com id "btnCuriosidades" ausente no HTML.');
+    return;
+  }
+  if (!extras) {
+    console.error('Container de curiosidades extras não encontrado: elemento com id "curiosidadesExtras" ausente no HTML.');
+    return;
+  }
+
+  extras.style.display = extras.style.display || 'none';
+  btn.textContent = (extras.style.display === 'none')
+    ? 'Mostrar mais curiosidades'
+    : 'Mostrar menos curiosidades';
+
+  btn.addEventListener('click', () => {
+    const isHidden = getComputedStyle(extras).display === 'none';
+    if (isHidden) {
+      extras.style.display = 'block';
+      extras.style.opacity = 0;
+      extras.style.transform = 'translateY(10px)';
+      void extras.offsetWidth;
+      extras.style.transition = 'opacity 300ms ease, transform 300ms ease';
+      extras.style.opacity = 1;
+      extras.style.transform = 'translateY(0)';
+      btn.textContent = 'Mostrar menos curiosidades';
+    } else {
+      extras.style.opacity = 0;
+      extras.style.transform = 'translateY(10px)';
+      setTimeout(() => {
+        extras.style.display = 'none';
+      }, 300);
+      btn.textContent = 'Mostrar mais curiosidades';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
