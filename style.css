@@ -375,3 +375,38 @@ footer p {
   background-color: #fff; /* fundo neutro para bordas transparentes, se houver */
   border-radius: 12px;   /* mantém o estilo arredondado do site */
 }
+/* ===== Correções gerais de exibição de imagens ===== */
+
+/* Garante que TODAS as imagens sejam exibidas completas e proporcionais */
+img {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Mantém aparência bonita dos cards */
+.card img {
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card img:hover {
+  transform: scale(1.02);
+}
+
+/* Garante que o banner e imagens grandes continuem funcionando bem */
+.hero-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* Mantém a imagem de músculos 100% visível */
+#orgaos img[alt="Músculos respiratórios"] {
+  object-fit: contain;
+  height: auto;
+}
